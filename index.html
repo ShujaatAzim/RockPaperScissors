@@ -30,12 +30,10 @@
       </div>
 
       <div class="round-container">
-        <strong>Round Number: <span class="round" id="round-number">0</span></strong>
+        <strong>Round: <span class="round" id="round-number">0</span></strong>
       </div>
 
       <section class="options-container">
-        <h2>Choose an option:</h2>
-        <br />
         <div class="btn-container">
           <button id="rock-btn" class="btn">Rock 🪨</button>
           <button id="paper-btn" class="btn">Paper 📃</button>
@@ -44,10 +42,14 @@
       </section>
 
       <div class="results-container">
-        <p id="choices-msg"></p>
+        <div class="choice-messages-container">
+          <p id="player-choice-msg"></p>
+          <p id="computer-choice-msg"></p>
+        </div>
         <br />
-        <p id="results-msg"></p>
-        <br />
+        <div>
+          <p id="results-msg"></p>
+        </div>
         <strong><p id="winner-msg"></p></strong>
         <button class="btn" id="reset-game-btn">Play again?</button>
       </div>
