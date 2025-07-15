@@ -45,7 +45,8 @@ function getRoundResults(userOption) {
 const playerScoreSpanElement = document.getElementById("player-score");
 const computerScoreSpanElement = document.getElementById("computer-score");
 const roundNumberSpanElement = document.getElementById("round-number");
-const roundChoicesMsg = document.getElementById("choices-msg")
+const playerChoiceMsg = document.getElementById("player-choice-msg");
+const computerChoiceMsg = document.getElementById("computer-choice-msg")
 const roundResultsMsg = document.getElementById("results-msg");
 const winnerMsgElement = document.getElementById("winner-msg");
 const optionsContainer = document.querySelector(".options-container");
@@ -53,7 +54,8 @@ const resetGameBtn = document.getElementById("reset-game-btn");
 
 function showResults(userOption) {
   roundResultsMsg.innerText = getRoundResults(userOption);
-  roundChoicesMsg.innerText = `Player chose ${playerChoice} and the computer chose ${computerChoice}.`
+  playerChoiceMsg.innerText = `Player chose ${playerChoice}` 
+  computerChoiceMsg.innerText = `Computer chose ${computerChoice}`
   computerScoreSpanElement.innerText = computerScore;
   playerScoreSpanElement.innerText = playerScore;
   roundNumberSpanElement.innerText = roundNumber;
