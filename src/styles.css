@@ -113,6 +113,14 @@ h1 {
 .results-container {
   font-size: clamp(1.05rem, 2.7vw, 1.3rem);
   margin: var(--space-sm) 0;
+  justify-content: center;
+}
+
+.choice-messages-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .site-footer {
