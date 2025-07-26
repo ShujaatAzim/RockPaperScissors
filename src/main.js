@@ -41,7 +41,6 @@ function getRoundResults(userOption) {
   }
 }
 
-
 const playerScoreSpanElement = document.getElementById("player-score");
 const computerScoreSpanElement = document.getElementById("computer-score");
 const roundNumberSpanElement = document.getElementById("round-number");
@@ -65,8 +64,10 @@ function showResults(userOption) {
       playerScore === 3 ? "Player" : "Computer"
     } has won the game!`;
 
+    rockBtn.setAttribute("disabled", "true");
+    paperBtn.setAttribute("disabled", "true");
+    scissorsBtn.setAttribute("disabled", "true");
     resetGameBtn.style.display = "block";
-    optionsContainer.style.display = "none";
   }
 
 };
@@ -79,8 +80,13 @@ function resetGame() {
   roundNumberSpanElement.innerText = roundNumber;
   optionsContainer.style.display = "block";
   resetGameBtn.style.display = "none";
+  playerChoiceMsg.innerText = "";
+  computerChoiceMsg.innerText = "";
   winnerMsgElement.innerText = "";
   roundResultsMsg.innerText = "";
+  rockBtn.removeAttribute("disabled");
+  paperBtn.removeAttribute("disabled");
+  scissorsBtn.removeAttribute("disabled");
 };
 
 resetGameBtn.addEventListener("click", resetGame);
