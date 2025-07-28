@@ -32,12 +32,12 @@ function getRoundResults(userOption) {
 
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
-    return `Player wins the round! ${userOption} beats ${computerResult}`;
+    return [`${userOption} beats ${computerResult}`, 'Player wins the round!'];
   } else if (computerResult === userOption) {
-    return `It's a tie! Both chose ${userOption}`;
+    return [`Both chose ${userOption}`, 'It\'s a tie!'];
   } else {
     computerScore++;
-    return `Computer wins the round! ${computerResult} beats ${userOption}`;
+    return [`${computerResult} beats ${userOption}`, 'Computer wins the round!'];
   }
 }
 
@@ -46,15 +46,19 @@ const computerScoreSpanElement = document.getElementById("computer-score");
 const roundNumberSpanElement = document.getElementById("round-number");
 const playerChoiceMsg = document.getElementById("player-choice-msg");
 const computerChoiceMsg = document.getElementById("computer-choice-msg")
-const roundResultsMsg = document.getElementById("results-msg");
+const roundResultsMsg1 = document.getElementById("results-msg-1");
+const roundResultsMsg2 = document.getElementById("results-msg-2");
 const winnerMsgElement = document.getElementById("winner-msg");
 const optionsContainer = document.querySelector(".options-container");
 const resetGameBtn = document.getElementById("reset-game-btn");
 
 function showResults(userOption) {
-  roundResultsMsg.innerText = getRoundResults(userOption);
-  playerChoiceMsg.innerText = `Player chose ${playerChoice}` 
-  computerChoiceMsg.innerText = `Computer chose ${computerChoice}`
+  const roundResults = getRoundResults(userOption)
+
+  roundResultsMsg1.innerText = roundResults[0];
+  roundResultsMsg2.innerText = roundResults[1];
+  playerChoiceMsg.innerText = `Player chose: ${playerChoice}` 
+  computerChoiceMsg.innerText = `Computer chose: ${computerChoice}`
   computerScoreSpanElement.innerText = computerScore;
   playerScoreSpanElement.innerText = playerScore;
   roundNumberSpanElement.innerText = roundNumber;
@@ -83,7 +87,8 @@ function resetGame() {
   playerChoiceMsg.innerText = "";
   computerChoiceMsg.innerText = "";
   winnerMsgElement.innerText = "";
-  roundResultsMsg.innerText = "";
+  roundResultsMsg1.innerText = "";
+  roundResultsMsg2.innerText = "";
   rockBtn.removeAttribute("disabled");
   paperBtn.removeAttribute("disabled");
   scissorsBtn.removeAttribute("disabled");
