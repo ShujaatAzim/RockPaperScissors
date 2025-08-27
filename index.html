@@ -1,13 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link id="favicon" rel="icon" href="/public/rock.png" />
   </head>
   <body>
-    <div id="app"></div>
+    <h1>Let's play Rock, Paper, Scissors!</h1>
+    <main>
+      <details class="rules-container">
+        <summary>Rules of the game</summary>
+
+        <p>You will be playing against the computer.</p>
+        <p>You can choose Rock, Paper, or Scissors.</p>
+        <ul>
+          <li>🪨 Rock beats Scissors ✂️</li>
+          <li>✂️ Scissors beats Paper 📃</li>
+          <li>📃 Paper beats Rock 🪨</li>
+        </ul>
+        <p>If the same option is chosen by both, no points are awarded.</p>
+        <p>First to three points wins.</p>
+      </details>
+
+      <div class="score-container">
+        <strong>Player Score: <span class="score" id="player-score">0</span></strong>
+        <strong>Computer Score: <span class="score" id="computer-score">0</span></strong>
+      </div>
+
+      <div class="round-container">
+        <strong>Round Number: <span class="round" id="round-number">0</span></strong>
+      </div>
+
+      <section class="options-container">
+        <h2>Choose an option:</h2>
+        <br />
+        <div class="btn-container">
+          <button id="rock-btn" class="btn">Rock 🪨</button>
+          <button id="paper-btn" class="btn">Paper 📃</button>
+          <button id="scissors-btn" class="btn">Scissors ✂️</button>
+        </div>
+      </section>
+
+      <div class="results-container">
+        <p id="choices-msg"></p>
+        <br />
+        <p id="results-msg"></p>
+        <br />
+        <strong><p id="winner-msg"></p></strong>
+        <button class="btn" id="reset-game-btn">Play again?</button>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with ❤️ by Shujaat Azim</p>
+      <p>Extended from freeCodeCamp's practice project</p>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

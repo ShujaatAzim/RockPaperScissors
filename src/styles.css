@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-blue: #0a0a23;
+  --white: #ffffff;
+  --yellow: #f1be32;
+  --golden-yellow: #feac32;
+  --space-xs: clamp(8px, 1.5vw, 12px);
+  --space-sm: clamp(12px, 2vw, 16px);
+  --space-md: clamp(16px, 3vw, 24px);
+  --space-lg: clamp(20px, 4vw, 32px);
+}
+
+main {
+  padding-inline: var(--space-sm);
+  flex: 1;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--very-dark-blue);
+  text-align: center;
+  color: var(--white);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 15px 0 20px;
+}
+
+.btn {
+  cursor: pointer;
+  width: auto;
+  min-width: 96px;
+  margin: var(--space-xs);
+  padding: 0.5rem 0.9rem;
+  color: var(--very-dark-blue);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-color: var(--golden-yellow);
+  border-width: 3px;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.btn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+}
+
+.options-container {
+  justify-content: center;
+  margin: 30px 0;
+  font-size: 1.2rem;
+}
+
+.round-container {
+  justify-content: center;
+  margin: 30px 0;
+  font-size: 1.2rem;
+}
+
+.rules-container {
+  padding: var(--space-sm);
+  margin: var(--space-sm) auto;
+  border-radius: 15px;
+  border: 5px solid var(--yellow);
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+}
+
+.rules-container ul {
+  list-style-type: none;
+}
+
+.rules-container p {
+  margin: 10px 0;
+}
+
+@media (min-width: 760px) {
+  .rules-container {
+    width: 40%;
+  }
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.score {
+  font-weight: 500;
+}
+
+.results-container {
+  font-size: clamp(1.05rem, 2.7vw, 1.3rem);
+  margin: var(--space-sm) 0;
+}
+
+.site-footer {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+#winner-msg {
+  margin-top: 25px;
+}
+
+#reset-game-btn {
+  display: none;
+  margin: 20px auto;
+}
+
+@media (max-width: 480px) {
+  .score-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .site-footer {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+  
+  .options-container { 
+    margin: var(--space-md) 0; 
+  }
+
+  #reset-game-btn { 
+    width: 100%; 
+    max-width: 320px; 
+  }
+
+  .rules-container {
+    width: 60%;
+  }
+}
